@@ -1,0 +1,13 @@
+{
+    "name": "Principales",
+    "alias": "principales",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Principales\\Providers\\PrincipalesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,6 @@
+{
+    "Productos": true,
+    "Categorias": true,
+    "Usuarios": true,
+    "Principales": true
+}
