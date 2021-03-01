@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="sid-plesk">
 <head>
-  <title>Kroonia</title>
+  <title>{{ getenv('APP_NAME') }}</title>
   <meta name="copyright" content="Copyright 1999-2018. Plesk International GmbH. All rights reserved.">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -118,7 +118,7 @@
 <body>
   <div class="header">
     <div class="inner-header flex">
-      <h1>KROONIA</h1>
+      <h1>{{ getenv('APP_NAME') }}</h1>
     </div>
     <div class="flex">
       <a href="/login" class="login">Iniciar Sesión</a>
@@ -138,7 +138,7 @@
     </div>
   </div>
   <div class="content flex">
-    <p>Kroonia | 2020</p>
+    <p>{{ getenv('APP_NAME') }} | 2021</p>
   </div>
 </body>
 </html>

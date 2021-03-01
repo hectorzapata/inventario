@@ -6,7 +6,7 @@
   <div class="d-flex align-items-center flex-wrap mr-2">
     <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Dashboard</h5>
     <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-    <span class="text-muted font-weight-bold mr-4">#Kroonia</span>
+    <span class="text-muted font-weight-bold mr-4">#{{ getenv('APP_NAME') }}</span>
   </div>
   <div class="d-flex align-items-center flex-wrap">
     <div class="btn btn-bg-white font-weight-bold mr-3 my-2 my-lg-0" style="cursor: inherit !important;">

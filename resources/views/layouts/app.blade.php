@@ -228,8 +228,8 @@
           <div class=" container  d-flex flex-column flex-md-row align-items-center justify-content-between">
             <!--begin::Copyright-->
             <div class="text-dark order-2 order-md-1">
-              <span class="text-muted font-weight-bold mr-2">2020&copy;</span>
-              <a href="http://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">Kroonia</a>
+              <span class="text-muted font-weight-bold mr-2">2021&copy;</span>
+              <a href="http://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">{{ getenv('APP_NAME') }}</a>
             </div>
             <!--end::Copyright-->
           </div>
