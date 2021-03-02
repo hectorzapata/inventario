@@ -1,11 +1,11 @@
 {
-    "name": "Principales",
-    "alias": "principales",
+    "name": "Catalogos",
+    "alias": "catalogos",
     "description": "",
     "keywords": [],
     "priority": 0,
     "providers": [
-        "Modules\\Principales\\Providers\\PrincipalesServiceProvider"
+        "Modules\\Catalogos\\Providers\\CatalogosServiceProvider"
     ],
     "aliases": {},
     "files": [],

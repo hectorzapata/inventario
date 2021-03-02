@@ -2,5 +2,7 @@
     "Productos": true,
     "Categorias": true,
     "Usuarios": true,
-    "Principales": true
+    "Principales": true,
+    "EquipoMedico": true,
+    "Catalogos": true
 }

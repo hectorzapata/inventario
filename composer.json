@@ -21,6 +21,7 @@
         "livewire/livewire": "^2.0",
         "nrml-co/laravel-api-keys": "^1.2",
         "nwidart/laravel-modules": "^8.0",
+        "simplesoftwareio/simple-qrcode": "^4.2",
         "spatie/flysystem-dropbox": "^1.2",
         "yajra/laravel-datatables-oracle": "~9.0"
     },

@@ -1,0 +1,13 @@
+{
+    "name": "EquipoMedico",
+    "alias": "equipomedico",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\EquipoMedico\\Providers\\EquipoMedicoServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
