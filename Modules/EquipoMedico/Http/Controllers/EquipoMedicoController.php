@@ -22,7 +22,6 @@ class EquipoMedicoController extends Controller{
   }
   public function create(){
     $data = [];
-    $data['categorias'] = [];
     $data['marca'] = Marca::where('activo', 1)->get();
     $data['pais'] = Pais::where('activo', 1)->get();
     $data['planta'] = Planta::where('activo', 1)->get();
@@ -71,11 +70,11 @@ class EquipoMedicoController extends Controller{
       $acciones = [
         "QR" => [
           "href" => "/equipomedico/$value->id/qr"
+        ],
+        "Editar" => [
+          "icon" => "edit blue",
+          "href" => "/equipomedico/$value->id/edit"
         ]
-        // "Editar" => [
-        //   "icon" => "edit blue",
-        //   "href" => "/productos/$value->id/edit"
-        // ]
       ];
       $value->acciones = generarDropdown($acciones);
     }
@@ -83,28 +82,22 @@ class EquipoMedicoController extends Controller{
     return $datatable;
   }
   public function edit($id){
-    $data['data'] = Producto::find($id);
-    $data['categorias'] = Categoria::where('activo', 1)->get();
+    $data['data'] = EquipoMedico::find($id);
+    $data['marca'] = Marca::where('activo', 1)->get();
+    $data['pais'] = Pais::where('activo', 1)->get();
+    $data['planta'] = Planta::where('activo', 1)->get();
+    $data['servicioHospitalario'] = ServicioHospitalario::where('activo', 1)->get();
+    $data['situacionActual'] = SituacionActual::where('activo', 1)->get();
+    // $data['categorias'] = Categoria::where('activo', 1)->get();
     return view('equipomedico::create')->with($data);
   }
   public function update($id, Request $request){
     try {
-      $producto = Producto::findOrFail($id);
-      $data = $request->all();
-      if ( isset($data['imagen']) ) {
-        $nombre = \Carbon\Carbon::now()->timestamp . "_" . $request->file('imagen')->getClientOriginalName();
-        Storage::disk('dropbox')->putFileAs(
-          '/',
-          $request->file('imagen'),
-          $nombre
-        );
-        $response = $this->dropbox->createSharedLinkWithSettings( $nombre, ["requested_visibility" => "public"] );
-        $data['imagen'] = str_replace('dl=0', 'raw=1', $response['url']);
-      }
-      $producto->fill($data);
-      $producto->save();
-      flash('Producto actualizado con éxito')->success();
-      return redirect("/productos");
+      $em = EquipoMedico::findOrFail($id);
+      $em->fill($request->all());
+      $em->save();
+      flash('Equipo médico actualizado con éxito')->success();
+      return redirect("/equipomedico");
     } catch (\Exception $e) {
       $mensaje = "Lo sentimos, ha ocurrido un error al intentar actualizar el registro";
       flash($mensaje)->warning();

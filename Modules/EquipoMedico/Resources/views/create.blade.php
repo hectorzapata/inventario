@@ -94,24 +94,42 @@ figure.preview {
 @endsection
 @section('script')
 <script>
-// var marca = $('.select2.marca');
 $(function() {
   $('.select2').select2({ placeholder: "Selecciona una opción", width: 'resolve' });
-  $.each($('input[type=text]'), function(i, item) {
-    $(item).val( $(item).attr('name') );
-  });
-  $('.select2').val(1);
-  $('.select2').trigger('change');
-
-  // marca.trigger('change');
-
-  // marca = marca.select2({ placeholder: "Selecciona una marca" });
-  @if ( old('idMarca') )
-    // marca.val('{{ old("idMarca") }}');
-    // marca.trigger('change');
+  @if ( old('idPais') )
+    $('.select2.paisOrigen').val('{{ old("idPais") }}');
+    $('.select2.paisOrigen').trigger('change');
   @elseif ( isset($data) )
-    // marca.val('{{ $data->idMarca }}');
-    // marca.trigger('change');
+    $('.select2.paisOrigen').val('{{ $data->idPais }}');
+    $('.select2.paisOrigen').trigger('change');
+  @endif
+  @if ( old('idMarca') )
+    $('.select2.marca').val('{{ old("idMarca") }}');
+    $('.select2.marca').trigger('change');
+  @elseif ( isset($data) )
+    $('.select2.marca').val('{{ $data->idMarca }}');
+    $('.select2.marca').trigger('change');
+  @endif
+  @if ( old('idPlanta') )
+    $('.select2.planta').val('{{ old("idPlanta") }}');
+    $('.select2.planta').trigger('change');
+  @elseif ( isset($data) )
+    $('.select2.planta').val('{{ $data->idPlanta }}');
+    $('.select2.planta').trigger('change');
+  @endif
+  @if ( old('idServicioHospitalario') )
+    $('.select2.servicioHospitalario').val('{{ old("idServicioHospitalario") }}');
+    $('.select2.servicioHospitalario').trigger('change');
+  @elseif ( isset($data) )
+    $('.select2.servicioHospitalario').val('{{ $data->idServicioHospitalario }}');
+    $('.select2.servicioHospitalario').trigger('change');
+  @endif
+  @if ( old('idSituacionActual') )
+    $('.select2.situacionActual').val('{{ old("idSituacionActual") }}');
+    $('.select2.situacionActual').trigger('change');
+  @elseif ( isset($data) )
+    $('.select2.situacionActual').val('{{ $data->idSituacionActual }}');
+    $('.select2.situacionActual').trigger('change');
   @endif
   FormValidation.formValidation(
     document.getElementById('formCategoria'),
