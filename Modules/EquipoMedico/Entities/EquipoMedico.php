@@ -17,6 +17,7 @@ class EquipoMedico extends Model{
     "lote",
     "anoFabricacion",
     "numeroActivoFijo",
+    "numeroInventario",
     "infoPrioridad",
     "referenciaMaestra",
     "costo",

@@ -63,29 +63,35 @@
 </div>
 <div class="form-group row">
   <div class="col-lg-6">
+    <label>Número de inventario</label>
+    <input value="{{ old('numeroInventario') ? old('numeroInventario') : ( isset($data) ? $data->numeroInventario : "" ) }}" type="text" name="numeroInventario" class="form-control" placeholder="Escribe el número de activo fijo">
+  </div>
+  <div class="col-lg-6">
     <label>Prioridad</label>
     <input value="{{ old('infoPrioridad') ? old('infoPrioridad') : ( isset($data) ? $data->infoPrioridad : "" ) }}" type="text" name="infoPrioridad" class="form-control" placeholder="Escribe la prioridad">
   </div>
+</div>
+<div class="form-group row">
   <div class="col-lg-6">
     <label>Referencia maestra</label>
     <input value="{{ old('referenciaMaestra') ? old('referenciaMaestra') : ( isset($data) ? $data->referenciaMaestra : "" ) }}" type="text" name="referenciaMaestra" class="form-control" placeholder="Escribe la referencia maestra">
   </div>
-</div>
-<div class="form-group row">
   <div class="col-lg-6">
     <label>Costo</label>
     <input value="{{ old('costo') ? old('costo') : ( isset($data) ? $data->costo : "" ) }}" type="text" name="costo" class="form-control" placeholder="Escribe el costo del equipo">
   </div>
+</div>
+<div class="form-group row">
   <div class="col-lg-6">
     <label>Tipo de equipo</label>
     <input value="{{ old('tipoEquipo') ? old('tipoEquipo') : ( isset($data) ? $data->tipoEquipo : "" ) }}" type="text" name="tipoEquipo" class="form-control" placeholder="Escribe el tipo de equipo">
   </div>
-</div>
-<div class="form-group row">
   <div class="col-lg-6">
     <label>Tiempo de vida</label>
     <input value="{{ old('tiempoVida') ? old('tiempoVida') : ( isset($data) ? $data->tiempoVida : "" ) }}" type="text" name="tiempoVida" class="form-control" placeholder="Escribe el tiempo de vida del equipo">
   </div>
+</div>
+<div class="form-group row">
   <div class="col-lg-6">
     <label>Garantía</label>
     <input value="{{ old('garantia') ? old('garantia') : ( isset($data) ? $data->garantia : "" ) }}" type="text" name="garantia" class="form-control" placeholder="Escribe la garantía del equipo">
