@@ -36,7 +36,7 @@
   <div id="kt_header_mobile" class="header-mobile  header-mobile-fixed " >
     <div class="d-flex align-items-center">
       <!--begin::Logo-->
-      <a href="/" class="mr-7">
+      <a href="/dashboard" class="mr-7">
         <img alt="Logo" src="/logobiosin.png" class="max-h-30px"/>
       </a>
       <!--end::Logo-->
@@ -77,7 +77,7 @@
               <!--begin::Left-->
               <div class="d-none d-lg-flex align-items-center mr-3">
                 <!--begin::Logo-->
-                <a href="/" class="mr-10">
+                <a href="/dashboard" class="mr-10">
                   <img alt="Logo" src="/logobiosin.png" class="max-h-35px"/>
                 </a>
                 <!--end::Logo-->
