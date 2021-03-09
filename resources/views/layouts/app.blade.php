@@ -36,8 +36,8 @@
   <div id="kt_header_mobile" class="header-mobile  header-mobile-fixed " >
     <div class="d-flex align-items-center">
       <!--begin::Logo-->
-      <a href="index.html" class="mr-7">
-        <img alt="Logo" src="/demo/assets/media/logos/logo-letter-5.png" class="max-h-30px"/>
+      <a href="/" class="mr-7">
+        <img alt="Logo" src="/logobiosin.png" class="max-h-30px"/>
       </a>
       <!--end::Logo-->
     </div>
@@ -77,8 +77,8 @@
               <!--begin::Left-->
               <div class="d-none d-lg-flex align-items-center mr-3">
                 <!--begin::Logo-->
-                <a href="index.html" class="mr-10">
-                  <img alt="Logo" src="/demo/assets/media/logos/logo-letter-5.png" class="max-h-35px"/>
+                <a href="/" class="mr-10">
+                  <img alt="Logo" src="/logobiosin.png" class="max-h-35px"/>
                 </a>
                 <!--end::Logo-->
               </div>

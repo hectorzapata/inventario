@@ -118,7 +118,7 @@
 <body>
   <div class="header">
     <div class="inner-header flex">
-      <h1>{{ getenv('APP_NAME') }}</h1>
+      <h1>{{ mb_strtoupper(getenv('APP_NAME')) }}</h1>
     </div>
     <div class="flex">
       <a href="/login" class="login">Iniciar Sesión</a>
