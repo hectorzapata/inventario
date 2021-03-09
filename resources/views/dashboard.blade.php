@@ -17,7 +17,7 @@
 @endsection
 @section('content')
   <div class="row">
-    <div class="col-xl-4">
+    <div class="col-xl-4" style="display: none;">
       <div class="card card-custom gutter-b card-stretch">
         <div class="card-header border-0 pt-5">
           <div class="card-title">
@@ -112,7 +112,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-5">
+    <div class="col-xl-5" style="display: none;">
       <div class="row">
         <div class="col-xl-6">
           <div class="card card-custom bg-danger gutter-b" style="height: 130px">
@@ -168,7 +168,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-3">
+    <div class="col-xl-3" style="display: none;">
       <div class="card card-custom bgi-no-repeat gutter-b card-stretch" style="background-color: #1B283F; background-position: 0 calc(100% + 0.5rem); background-size: 100% auto; background-image: url(assets/media/svg/patterns/rhone.svg)">
         <div class="card-body">
           <div class="p-4">
