@@ -108,4 +108,15 @@ class EquipoMedicoController extends Controller{
     $data['data'] = EquipoMedico::find($id);
     return view('equipomedico::qr')->with($data);
   }
+  public function search(Request $request){
+    try {
+      $em = EquipoMedico::with('Marca')
+      ->where('nombre', 'LIKE', '%' . $request->term . '%')
+      ->orWhere('serie', 'LIKE', '%' . $request->term . '%')
+      ->get();
+      return $em;
+    } catch (\Exception $e) {
+      return [];
+    }
+  }
 }

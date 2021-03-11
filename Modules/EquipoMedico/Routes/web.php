@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('equipomedico')->group(function() {
+Route::prefix('equipomedico')->middleware('auth')->group(function() {
   Route::get('/', 'EquipoMedicoController@index');
   Route::get('/create', 'EquipoMedicoController@create');
   Route::post('/', 'EquipoMedicoController@store');
@@ -19,4 +19,5 @@ Route::prefix('equipomedico')->group(function() {
   Route::get('/{id}/edit', 'EquipoMedicoController@edit');
   Route::put('/{id}', 'EquipoMedicoController@update');
   Route::get('/{id}/qr', 'EquipoMedicoController@qr');
+  Route::get('/search', 'EquipoMedicoController@search');
 });
