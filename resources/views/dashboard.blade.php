@@ -17,7 +17,118 @@
 @endsection
 @section('content')
   <div class="row">
-    <div class="col-xl-4" style="display: none;">
+    <div class="col-xl-3">
+      <div class="card card-custom gutter-b" style="height: 130px">
+        <div class="card-body d-flex flex-column">
+          <div class="flex-grow-1">
+            <div class="text-dark-50 font-weight-bold">Usuarios</div>
+            <div class="font-weight-bolder font-size-h3">{{ $usuarios }}</div>
+          </div>
+          <div class="progress progress-xs">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3">
+      <div class="card card-custom gutter-b" style="height: 130px">
+        <div class="card-body d-flex flex-column">
+          <div class="flex-grow-1">
+            <div class="text-dark-50 font-weight-bold">Equipo médico</div>
+            <div class="font-weight-bolder font-size-h3">{{ $equipo }}</div>
+          </div>
+          <div class="progress progress-xs">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3">
+      <div class="card card-custom gutter-b" style="height: 130px">
+        <div class="card-body d-flex flex-column">
+          <div class="flex-grow-1">
+            <div class="text-dark-50 font-weight-bold">Órdenes pendientes</div>
+            <div class="font-weight-bolder font-size-h3">5</div>
+          </div>
+          <div class="progress progress-xs">
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3">
+      <div class="card card-custom gutter-b" style="height: 130px">
+        <div class="card-body d-flex flex-column">
+          <div class="flex-grow-1">
+            <div class="text-dark-50 font-weight-bold">Proveedores</div>
+            <div class="font-weight-bolder font-size-h3">1</div>
+          </div>
+          <div class="progress progress-xs">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="display: none;">
+    <div class="col-xl-5">
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="card card-custom bg-danger gutter-b" style="height: 130px">
+            <div class="card-body d-flex flex-column p-0">
+              <div class="flex-grow-1 card-spacer-x pt-6">
+                <div class="text-inverse-danger font-weight-bold">Equipo médico</div>
+                <div class="text-inverse-danger font-weight-bolder font-size-h3">{{ $equipo }}</div>
+              </div>
+              <div id="kt_tiles_widget_2_chart" class="card-rounded-bottom" style="height: 50px">
+              </div>
+            </div>
+          </div>
+          <div class="card card-custom bgi-no-repeat bgi-no-repeat bgi-size-cover gutter-b" style="height: 130px; background-image: url(assets/media/bg/bg-9.jpg)">
+            <div class="card-body d-flex flex-column">
+              <a href="/categorias" class="text-dark-75 text-hover-primary font-weight-bolder font-size-h3">Proveedores</a>
+              <div class="font-weight-bolder font-size-h3">1</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="card card-custom gutter-b" style="height: 130px">
+            <div class="card-body d-flex flex-column">
+              <div class="flex-grow-1">
+                <div class="text-dark-50 font-weight-bold">Usuarios</div>
+                <div class="font-weight-bolder font-size-h3">{{ $usuarios }}</div>
+              </div>
+              <div class="progress progress-xs">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card card-custom bg-info gutter-b" style="height: 130px">
+            <div class="card-body d-flex flex-column p-0">
+              <div class="flex-grow-1 card-spacer-x pt-6">
+                <div class="text-inverse-info font-weight-bold">Órdenes pendientes</div>
+                <div class="text-inverse-info font-weight-bolder font-size-h3">5</div>
+              </div>
+              <div id="kt_tiles_widget_5_chart" class="card-rounded-bottom" style="height: 50px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-custom bgi-no-repeat gutter-b" style="height: 175px; background-color: #4AB58E; background-position: calc(100% + 1rem) bottom; background-size: 25% auto; background-image: url(assets/media/svg/humans/custom-1.svg)">
+        <div class="card-body d-flex align-items-center">
+          <div class="py-2">
+            <h3 class="text-white font-weight-bolder mb-3">30% Off Themes</h3>
+            <p class="text-white font-size-lg">
+              Get your discounted themes of the month<br/>
+              No hassle, no worries, no fuss<br/>
+              Instant rewards, everyday
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4">
       <div class="card card-custom gutter-b card-stretch">
         <div class="card-header border-0 pt-5">
           <div class="card-title">
@@ -112,63 +223,8 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-5" style="display: none;">
-      <div class="row">
-        <div class="col-xl-6">
-          <div class="card card-custom bg-danger gutter-b" style="height: 130px">
-            <div class="card-body d-flex flex-column p-0">
-              <div class="flex-grow-1 card-spacer-x pt-6">
-                <div class="text-inverse-danger font-weight-bold">Productos</div>
-                <div class="text-inverse-danger font-weight-bolder font-size-h3">{{ $productos }}</div>
-              </div>
-              <div id="kt_tiles_widget_2_chart" class="card-rounded-bottom" style="height: 50px">
-              </div>
-            </div>
-          </div>
-          <div class="card card-custom bgi-no-repeat bgi-no-repeat bgi-size-cover gutter-b" style="height: 130px; background-image: url(assets/media/bg/bg-9.jpg)">
-            <div class="card-body d-flex flex-column">
-              <a href="/categorias" class="text-dark-75 text-hover-primary font-weight-bolder font-size-h3">Categorías</a>
-              <div class="font-weight-bolder font-size-h3">{{ $categorias }}</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-6">
-          <div class="card card-custom gutter-b" style="height: 130px">
-            <div class="card-body d-flex flex-column">
-              <div class="flex-grow-1">
-                <div class="text-dark-50 font-weight-bold">Total de ventas</div>
-                <div class="font-weight-bolder font-size-h3">4,9M</div>
-              </div>
-              <div class="progress progress-xs">
-                <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="card card-custom bg-info gutter-b" style="height: 130px">
-            <div class="card-body d-flex flex-column p-0">
-              <div class="flex-grow-1 card-spacer-x pt-6">
-                <div class="text-inverse-info font-weight-bold">Comisiones</div>
-                <div class="text-inverse-info font-weight-bolder font-size-h3">$2,005</div>
-              </div>
-              <div id="kt_tiles_widget_5_chart" class="card-rounded-bottom" style="height: 50px"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card card-custom bgi-no-repeat gutter-b" style="height: 175px; background-color: #4AB58E; background-position: calc(100% + 1rem) bottom; background-size: 25% auto; background-image: url(assets/media/svg/humans/custom-1.svg)">
-        <div class="card-body d-flex align-items-center">
-          <div class="py-2">
-            <h3 class="text-white font-weight-bolder mb-3">30% Off Themes</h3>
-            <p class="text-white font-size-lg">
-              Get your discounted themes of the month<br/>
-              No hassle, no worries, no fuss<br/>
-              Instant rewards, everyday
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3" style="display: none;">
+
+    <div class="col-xl-3">
       <div class="card card-custom bgi-no-repeat gutter-b card-stretch" style="background-color: #1B283F; background-position: 0 calc(100% + 0.5rem); background-size: 100% auto; background-image: url(assets/media/svg/patterns/rhone.svg)">
         <div class="card-body">
           <div class="p-4">

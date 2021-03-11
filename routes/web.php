@@ -21,7 +21,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
   setlocale(LC_TIME, 'es_ES');
   $fecha = \Carbon\Carbon::now();
   $data['fecha'] = ucwords($fecha->formatLocalized('%d %B %Y'));
-  $data['categorias'] = \Modules\Categorias\Entities\Categoria::where('activo', 1)->count();
-  $data['productos'] = \Modules\Productos\Entities\Producto::where('activo', 1)->count();
+  $data['usuarios'] = \App\User::count();
+  $data['equipo'] = \Modules\EquipoMedico\Entities\EquipoMedico::where('activo', 1)->count();
   return view('dashboard')->with($data);
 })->name('dashboard');

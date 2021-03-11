@@ -125,7 +125,7 @@
                       @endphp
                       <li class="menu-item menu-item{{ $actual == $alias ? '-active' : '' }}" aria-haspopup="true">
                         <a href="/{{ $alias }}" class="menu-link">
-                          <span class="menu-text">{{ $value->get('name') }}</span>
+                          <span class="menu-text">{{ $value->get('titulo') ? $value->get('titulo') : $value->get('name') }}</span>
                         </a>
                       </li>
                     @endforeach
