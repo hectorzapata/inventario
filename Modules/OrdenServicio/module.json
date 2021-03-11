@@ -1,0 +1,14 @@
+{
+    "name": "OrdenServicio",
+    "alias": "ordenservicio",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\OrdenServicio\\Providers\\OrdenServicioServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "titulo": "Órden de servicio"
+}

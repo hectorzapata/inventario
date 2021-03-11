@@ -4,5 +4,6 @@
     "Usuarios": true,
     "Principales": true,
     "EquipoMedico": true,
-    "Catalogos": true
+    "Catalogos": true,
+    "OrdenServicio": true
 }
