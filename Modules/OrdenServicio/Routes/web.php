@@ -18,5 +18,7 @@ Route::prefix('ordenservicio')->middleware('auth')->group(function() {
   Route::get('/tabla', 'OrdenServicioController@tabla');
   Route::get('/{id}/edit', 'OrdenServicioController@edit');
   Route::put('/{id}', 'OrdenServicioController@update');
-  Route::get('/{id}/qr', 'OrdenServicioController@qr');
+  Route::get('/{id}/terminar', 'OrdenServicioController@terminar');
+  Route::post('/{id}/terminar', 'OrdenServicioController@terminarStore');
+  Route::get('/{id}/detalles', 'OrdenServicioController@detalles');
 });

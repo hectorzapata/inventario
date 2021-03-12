@@ -56,32 +56,43 @@ class OrdenServicioController extends Controller{
       // ->filterColumn('estado', function ($query, $keyword) {
       //   $query->whereRaw("DATE_FORMAT(created_at,'%d %M %Y') like ?", ["%$keyword%"]);
       // })
-      ->editColumn('estado', function ($reg) {
-        switch ($reg->estado) {
-          case '2':
-            return "En proceso";
-            break;
-          case '3':
-            return "Terminada";
-            break;
-          default:
-            return "Pendiente";
-            break;
-        }
-      })
+      // ->editColumn('estado', function ($reg) {
+      //   switch ($reg->estado) {
+      //     case '2':
+      //       return "En proceso";
+      //       break;
+      //     case '3':
+      //       return "Terminada";
+      //       break;
+      //     default:
+      //       return "Pendiente";
+      //       break;
+      //   }
+      // })
       ->make(true);
     //Cueri
     $data = $datatable->getData();
     foreach ($data->data as $key => $value) {
       $acciones = [
-        // "QR" => [
-        //   "href" => "/equipomedico/$value->id/qr"
-        // ],
-        "Editar" => [
-          "icon" => "edit blue",
-          "href" => "/equipomedico/$value->id/edit"
+        "Terminar" => [
+          "href" => "/ordenservicio/$value->id/terminar"
+        ],
+        "Detalles" => [
+          "href" => "/equipomedico/$value->id/detalles"
         ]
       ];
+      switch ($value->estado) {
+        case '2':
+          $value->estado = '<p class="text-primary">En proceso</p>';
+          break;
+        case '3':
+          $value->estado = '<p class="text-success">Terminada</p>';
+          unset($acciones['Terminar']);
+          break;
+        default:
+          $value->estado = '<p class="text-warning">Pendiente</p>';
+          break;
+      }
       $value->acciones = generarDropdown($acciones);
     }
     $datatable->setData($data);
@@ -110,8 +121,26 @@ class OrdenServicioController extends Controller{
       return back()->withInput($request->input());
     }
   }
-  public function qr($id){
-    $data['data'] = EquipoMedico::find($id);
-    return view('ordenservicio::qr')->with($data);
+  public function terminar($id){
+    $data['data'] = OrdenServicio::find($id);
+    // $data['usuarios'] = User::where('id', $data['data']->idAsignado)->get();
+    return view('ordenservicio::terminar')->with($data);
+  }
+  public function terminarStore($id, Request $request){
+    try {
+      $r = OrdenServicio::findOrFail($id);
+      $r->fill($request->all());
+      $r->estado = 3;
+      $r->save();
+      flash('Órden terminada con éxito')->success();
+      return redirect("/ordenservicio");
+    } catch (\Exception $e) {
+      $mensaje = "Lo sentimos, ha ocurrido un error al intentar crear el registro";
+      if ( strpos($request->server->get('HTTP_HOST'), "localhost") !== false ) {
+        $mensaje .= "| " . $e->getMessage();
+      }
+      flash($mensaje)->warning();
+      return back()->withInput($request->input());
+    }
   }
 }
