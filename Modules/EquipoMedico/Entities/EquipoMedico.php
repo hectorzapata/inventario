@@ -21,7 +21,7 @@ class EquipoMedico extends Model{
     "infoPrioridad",
     "referenciaMaestra",
     "costo",
-    "tipoEquipo",
+    "idTipoEquipo",
     "tiempoVida",
     "garantia",
     "idPlanta",

@@ -15,6 +15,7 @@ use \Modules\Catalogos\Entities\Pais;
 use \Modules\Catalogos\Entities\Planta;
 use \Modules\Catalogos\Entities\ServicioHospitalario;
 use \Modules\Catalogos\Entities\SituacionActual;
+use \Modules\Catalogos\Entities\TipoEquipo;
 
 class EquipoMedicoController extends Controller{
   public function index(){
@@ -27,6 +28,7 @@ class EquipoMedicoController extends Controller{
     $data['planta'] = Planta::where('activo', 1)->get();
     $data['servicioHospitalario'] = ServicioHospitalario::where('activo', 1)->get();
     $data['situacionActual'] = SituacionActual::where('activo', 1)->get();
+    $data['tipoEquipo'] = TipoEquipo::where('activo', 1)->get();
     return view('equipomedico::create')->with($data);
   }
   public function store(Request $request){
@@ -88,7 +90,7 @@ class EquipoMedicoController extends Controller{
     $data['planta'] = Planta::where('activo', 1)->get();
     $data['servicioHospitalario'] = ServicioHospitalario::where('activo', 1)->get();
     $data['situacionActual'] = SituacionActual::where('activo', 1)->get();
-    // $data['categorias'] = Categoria::where('activo', 1)->get();
+    $data['tipoEquipo'] = TipoEquipo::where('activo', 1)->get();
     return view('equipomedico::create')->with($data);
   }
   public function update($id, Request $request){

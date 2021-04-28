@@ -84,7 +84,12 @@
 <div class="form-group row">
   <div class="col-lg-6">
     <label>Tipo de equipo</label>
-    <input value="{{ old('tipoEquipo') ? old('tipoEquipo') : ( isset($data) ? $data->tipoEquipo : "" ) }}" type="text" name="tipoEquipo" class="form-control" placeholder="Escribe el tipo de equipo">
+    <select class="form-control select2 tipoEquipo" name="idTipoEquipo" style="width: 100%;">
+      <option value=""></option>
+      @foreach ($tipoEquipo as $key => $value)
+        <option value="{{ $value->id }}">{{ $value->tipoEquipo }}</option>
+      @endforeach
+    </select>
   </div>
   <div class="col-lg-6">
     <label>Tiempo de vida</label>

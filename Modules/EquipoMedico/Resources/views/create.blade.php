@@ -131,6 +131,20 @@ $(function() {
     $('.select2.situacionActual').val('{{ $data->idSituacionActual }}');
     $('.select2.situacionActual').trigger('change');
   @endif
+  @if ( old('internoExterno') )
+    $('.select2.internoExterno').val('{{ old("internoExterno") }}');
+    $('.select2.internoExterno').trigger('change');
+  @elseif ( isset($data) )
+    $('.select2.internoExterno').val('{{ $data->internoExterno }}');
+    $('.select2.internoExterno').trigger('change');
+  @endif
+  @if ( old('idTipoEquipo') )
+    $('.select2.tipoEquipo').val('{{ old("idTipoEquipo") }}');
+    $('.select2.tipoEquipo').trigger('change');
+  @elseif ( isset($data) )
+    $('.select2.tipoEquipo').val('{{ $data->idTipoEquipo }}');
+    $('.select2.tipoEquipo').trigger('change');
+  @endif
   FormValidation.formValidation(
     document.getElementById('formCategoria'),
     {
@@ -141,14 +155,7 @@ $(function() {
               message: 'Por favor, escribe el nombre'
             }
           }
-        },
-        imagen: {
-          validators: {
-            notEmpty: {
-              message: 'Por favor, selecciona una imagen'
-            }
-          }
-        },
+        }
       },
       plugins: {
         trigger: new FormValidation.plugins.Trigger(),

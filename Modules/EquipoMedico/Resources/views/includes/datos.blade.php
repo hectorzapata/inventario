@@ -10,7 +10,11 @@
   </div>
   <div class="col-lg-4">
     <label>Interno/Externo</label>
-    <input value="{{ old('internoExterno') ? old('internoExterno') : ( isset($data) ? $data->internoExterno : "" ) }}" type="text" name="internoExterno" class="form-control">
+    <select class="form-control select2 internoExterno" name="internoExterno" style="width: 100%;">
+      <option value=""></option>
+      <option value="1">Interno</option>
+      <option value="2">Externo</option>
+    </select>
   </div>
 </div>
 <h6>Calibración</h6>
