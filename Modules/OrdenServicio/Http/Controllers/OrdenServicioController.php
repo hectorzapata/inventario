@@ -49,26 +49,6 @@ class OrdenServicioController extends Controller{
       ->filterColumn('created_at', function ($query, $keyword) {
         $query->whereRaw("DATE_FORMAT(created_at,'%d %M %Y') like ?", ["%$keyword%"]);
       })
-      // ->editColumn('precio', function ($reg) {
-      //   setlocale(LC_MONETARY, 'es_MX');
-      //   return "$" . money_format('%i', $reg->precio);
-      // })
-      // ->filterColumn('estado', function ($query, $keyword) {
-      //   $query->whereRaw("DATE_FORMAT(created_at,'%d %M %Y') like ?", ["%$keyword%"]);
-      // })
-      // ->editColumn('estado', function ($reg) {
-      //   switch ($reg->estado) {
-      //     case '2':
-      //       return "En proceso";
-      //       break;
-      //     case '3':
-      //       return "Terminada";
-      //       break;
-      //     default:
-      //       return "Pendiente";
-      //       break;
-      //   }
-      // })
       ->make(true);
     //Cueri
     $data = $datatable->getData();
@@ -78,7 +58,7 @@ class OrdenServicioController extends Controller{
           "href" => "/ordenservicio/$value->id/terminar"
         ],
         "Detalles" => [
-          "href" => "/equipomedico/$value->id/detalles"
+          "href" => "/ordenservicio/$value->id/detalles"
         ]
       ];
       switch ($value->estado) {
@@ -123,7 +103,6 @@ class OrdenServicioController extends Controller{
   }
   public function terminar($id){
     $data['data'] = OrdenServicio::find($id);
-    // $data['usuarios'] = User::where('id', $data['data']->idAsignado)->get();
     return view('ordenservicio::terminar')->with($data);
   }
   public function terminarStore($id, Request $request){
@@ -142,5 +121,10 @@ class OrdenServicioController extends Controller{
       flash($mensaje)->warning();
       return back()->withInput($request->input());
     }
+  }
+  public function detalles($id){
+    $data['data'] = OrdenServicio::find($id);
+    $data['detalles'] = true;
+    return view('ordenservicio::terminar')->with($data);
   }
 }

@@ -12,6 +12,9 @@ class OrdenServicio extends Model{
     "fallasReportadas",
     "reportadoPor",
     "idAsignado",
+    "idCalificacionServicio",
+    "fallasEncontradas",
+    "descripcionTrabajoRealizado",
     "estado",
     "activo"
   ];
@@ -20,5 +23,8 @@ class OrdenServicio extends Model{
   }
   public function Usuario(){
     return $this->hasOne('\App\User', 'id', 'idAsignado');
+  }
+  public function CalificacionServicio(){
+    return $this->hasOne('\Modules\OrdenServicio\Entities\CalificacionServicio', 'id', 'idCalificacionServicio');
   }
 }

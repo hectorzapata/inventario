@@ -4,7 +4,7 @@
   <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Órden de Servicio</h5>
   <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
     <li class="breadcrumb-item enlace">
-      <a href="" class="text-muted">Todas las órdenes de servicio</a>
+      <a href="/ordenservicio" class="text-muted">Todas las órdenes de servicio</a>
     </li>
     <li class="breadcrumb-item">
       <span class="text-muted">{{ isset($data) ? 'Editar' : 'Nuevo' }}</span>
