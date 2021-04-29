@@ -1,0 +1,14 @@
+{
+    "name": "ProgramacionMantenimiento",
+    "alias": "programacionmantenimiento",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ProgramacionMantenimiento\\Providers\\ProgramacionMantenimientoServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "titulo": "Programación de Mantenimiento"
+}
